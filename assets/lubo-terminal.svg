@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="220" viewBox="0 0 1200 220" role="img" aria-labelledby="t d">
+  <title id="t">Lubo terminal status</title>
+  <desc id="d">Animated lines in a terminal-style panel describing Lubo's areas of interest.</desc>
+  <defs>
+    <linearGradient id="back" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0c1624"/><stop offset="1" stop-color="#091c21"/></linearGradient>
+    <linearGradient id="meter"><stop stop-color="#55e6bd"/><stop offset="1" stop-color="#58c4f6"/></linearGradient>
+  </defs>
+  <style>
+    text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+    .caret{animation:blink 1s steps(1,end) infinite}
+    .row1{animation:fade 3s ease-in-out infinite alternate}
+    .row2{animation:fade 3.4s ease-in-out .5s infinite alternate}
+    .row3{animation:fade 3.8s ease-in-out 1s infinite alternate}
+    .meter{transform-origin:left;animation:grow 3s ease-in-out infinite alternate}
+    @keyframes blink{50%{opacity:0}}
+    @keyframes fade{0%{opacity:.55}100%{opacity:1}}
+    @keyframes grow{0%{transform:scaleX(.42)}100%{transform:scaleX(1)}}
+    @media (prefers-reduced-motion:reduce){.caret,.row1,.row2,.row3,.meter{animation:none}}
+  </style>
+  <rect width="1200" height="220" rx="16" fill="url(#back)"/>
+  <rect x="1" y="1" width="1198" height="218" rx="15" fill="none" stroke="#2e5867" stroke-width="2"/>
+  <rect width="1200" height="37" rx="16" fill="#101f2c"/>
+  <rect y="26" width="1200" height="11" fill="#101f2c"/>
+  <circle cx="23" cy="19" r="5" fill="#fa6472"/><circle cx="42" cy="19" r="5" fill="#f9c55b"/><circle cx="61" cy="19" r="5" fill="#62da8d"/>
+  <text x="92" y="24" font-size="13" fill="#a4c5ce">~/lubo/status</text>
+  <text x="1128" y="24" font-size="12" text-anchor="end" fill="#55e6bd">● READY</text>
+  <text x="30" y="73" font-size="19" fill="#55e6bd">lubo@lab:~$</text><text x="193" y="73" font-size="19" fill="#e3ecf4">whoami --verbose</text><rect class="caret" x="402" y="57" width="10" height="21" fill="#55e6bd"/>
+  <g class="row1"><text x="38" y="108" font-size="18" fill="#e1eaf2">[ OK ] Linux systems &amp; troubleshooting</text><text x="730" y="108" font-size="16" fill="#57dfb7">██████████</text></g>
+  <g class="row2"><text x="38" y="142" font-size="18" fill="#e1eaf2">[ OK ] Automation, scripting &amp; APIs</text><text x="730" y="142" font-size="16" fill="#59c8f0">██████████</text></g>
+  <g class="row3"><text x="38" y="176" font-size="18" fill="#e1eaf2">[ .. ] Cloud, security &amp; CTF labs</text><text x="730" y="176" font-size="16" fill="#7ad8b5">██████░░░░</text></g>
+  <rect x="38" y="196" width="1100" height="2" rx="1" fill="#234552"/>
+  <rect class="meter" x="38" y="196" width="710" height="2" rx="1" fill="url(#meter)"/>
+</svg>
